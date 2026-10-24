@@ -1,0 +1,19 @@
+{
+ "imagined_return_original": {
+  "mean": 131.7906494140625,
+  "se": 0.15905964374542236
+ },
+ "imagined_return_padded_zeroed": {
+  "mean": 131.17050170898438,
+  "se": 0.16850432753562927
+ },
+ "return_diff_original_minus_zeroed": {
+  "mean": 0.6201491355895996,
+  "se": 0.02147333137691021,
+  "frac_positive": 0.8125
+ },
+ "abs_action_padded_dims": 0.4129289388656616,
+ "abs_action_real_dims": 0.6908860206604004,
+ "n_starts": 4096
+}
+{'in_action_colnorm_pretrained': (3.5047247409820557, 3.999659538269043), 'in_action_colnorm_ft40': (3.5159170627593994, 3.9693167209625244)}

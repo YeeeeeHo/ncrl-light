@@ -1,0 +1,332 @@
+{
+ "setting": {
+  "B": 16,
+  "T": 64,
+  "imag_horizon": 16,
+  "deter": 12288,
+  "hidden": 1536,
+  "classes": 96,
+  "cnn_depth": 96,
+  "padded_act_dim": 21,
+  "act_dim": 12,
+  "precision": 32,
+  "tf32_matmul": false,
+  "torch": "2.13.0",
+  "gpu": "NVIDIA GeForce RTX 4070"
+ },
+ "params": {
+  "wm.encoder": 6202080,
+  "wm.rssm._gru._in_deter": 18878976,
+  "wm.rssm._gru._in_stoch": 4723200,
+  "wm.rssm._gru._in_action": 36864,
+  "wm.rssm._gru._dynlayers": 75534336,
+  "wm.rssm._gru._dyngru": 56659968,
+  "wm.rssm._prior": 25964544,
+  "wm.rssm._posterior": 28319232,
+  "wm.decoder._fc_deter": 14168064,
+  "wm.decoder._fc_stoch": 18886656,
+  "wm.decoder._conv_model": 32010339,
+  "wm.reward_model": 4332287,
+  "ac.actor": 4486698,
+  "ac.critic": 4595967,
+  "ac._target_critic": 4595967,
+  "TOTAL wm (incl. reward)": 285716546,
+  "TOTAL ac (incl. target)": 13678632
+ },
+ "resident_after_build_GiB": 1.1153407096862793,
+ "wm_update_ms": {
+  "wm_fwd_encoder": 25.18835163116455,
+  "wm_fwd_rssm_observe": 252.39864349365234,
+  "wm_fwd_kl": 3.4137600660324097,
+  "wm_fwd_decoder": 48.07017517089844,
+  "wm_fwd_recon_loss": 0.49751999974250793,
+  "wm_bwd": 820.9157409667969,
+  "wm_opt_clip": 8.1627836227417,
+  "wm_opt_weight_decay": 5.383375883102417,
+  "wm_opt_adam": 48.89596748352051,
+  "wm_opt_zero_grad": 0.001728000002913177
+ },
+ "wm_update_peak_GiB": 8.903951644897461,
+ "ac_update_ms": {
+  "original_128": {
+   "reward_head_update": 8.452608108520508,
+   "imag_rollout_fwd": 77.47840118408203,
+   "imag_reward_value_target_fwd": 3.1160320043563843,
+   "actor_loss_fwd": 1.3716479539871216,
+   "actor_bwd_through_dynamics": 78.49164962768555,
+   "actor_opt": 0.844080001115799,
+   "critic_fwd": 1.8918240070343018,
+   "critic_bwd": 2.1109119653701782,
+   "critic_opt": 0.8755199909210205,
+   "slow_target": 0.2549760043621063
+  },
+  "original_256": {
+   "reward_head_update": 8.615583896636963,
+   "imag_rollout_fwd": 136.4858856201172,
+   "imag_reward_value_target_fwd": 6.160895824432373,
+   "actor_loss_fwd": 2.971135973930359,
+   "actor_bwd_through_dynamics": 150.62118530273438,
+   "actor_opt": 0.6513279974460602,
+   "critic_fwd": 3.5476800203323364,
+   "critic_bwd": 4.094735860824585,
+   "critic_opt": 0.9461760222911835,
+   "slow_target": 0.25723201036453247
+  },
+  "original_512": "OOM",
+  "original_1024": "OOM",
+  "ckpt_1024": {
+   "reward_head_update": 9.010688304901123,
+   "imag_rollout_fwd": 521.1268615722656,
+   "imag_reward_value_target_fwd": 25.22979164123535,
+   "actor_loss_fwd": 11.196928024291992,
+   "actor_bwd_through_dynamics": 1111.267333984375,
+   "actor_opt": 0.9210880100727081,
+   "critic_fwd": 13.084335803985596,
+   "critic_bwd": 17.582240104675293,
+   "critic_opt": 0.6845439970493317,
+   "slow_target": 0.25600001215934753
+  },
+  "slim_1024": "OOM"
+ },
+ "ac_update_peak_GiB": {
+  "original_128": 5.455875873565674,
+  "original_256": 7.227461338043213,
+  "original_512": "OOM (CUDA out of memory. Tried to allocate 408.00 MiB. GPU 0 has a total capacity of 11.58 GiB of which 427.44 MiB is free. Including non-PyTorch memory, this proces)",
+  "original_1024": "OOM (CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 11.58 GiB of which 173.44 MiB is free. Including non-PyTorch memory, this proces)",
+  "ckpt_1024": 8.19762659072876,
+  "slim_1024": "OOM (CUDA out of memory. Tried to allocate 48.00 MiB. GPU 0 has a total capacity of 11.58 GiB of which 78.12 MiB is free. Including non-PyTorch memory, this process )"
+ },
+ "flops_wm_update": {
+  "Encoder._conv_model.0": 18138267648,
+  "Global": 3453207183360,
+  "Encoder": 750161756160,
+  "Encoder._conv_model": 750161756160,
+  "Encoder._conv_model.3": 355140108288,
+  "Encoder._conv_model.6": 260919263232,
+  "Encoder._conv_model.9": 115964116992,
+  "BlockGRUCell._in_deter": 612444930048,
+  "BlockGRUCell._in_deter.0": 612444930048,
+  "BlockGRUCell": 1453165903872,
+  "BlockGRUCell._in_stoch.0": 602630258688,
+  "BlockGRUCell._in_stoch": 602630258688,
+  "BlockGRUCell._in_action.0": 1344600539136,
+  "BlockGRUCell._in_action": 1344600539136,
+  "BlockGRUCell._dynlayers.0": 463856467968,
+  "BlockGRUCell._dynlayers": 463856467968,
+  "BlockGRUCell._dyngru": 347892350976,
+  "Sequential.0": 260919263232,
+  "Sequential": 333396836352,
+  "Sequential.3": 43486543872,
+  "Sequential.6": 28991029248,
+  "Decoder._fc_deter": 86973087744,
+  "Decoder": 1413567479808,
+  "Decoder._fc_deter.0": 28991029248,
+  "Decoder._fc_deter.3": 57982058496,
+  "Decoder._fc_stoch.0": 115964116992,
+  "Decoder._fc_stoch": 173946175488,
+  "Decoder._fc_stoch.3": 57982058496,
+  "Decoder._conv_model.0": 181193932800,
+  "Decoder._conv_model": 1210630275072,
+  "Decoder._conv_model.3": 283115520000,
+  "Decoder._conv_model.6": 688989929472,
+  "Decoder._conv_model.9": 57330892800,
+  "Decoder._conv_model.10": 2298841399296
+ },
+ "flops_wm_update_total": 3453207183360,
+ "flops_ac_update_128starts": {
+  "MLPs._fc_deter": 63082332160,
+  "Global": 1701369872384,
+  "MLPs": 136146321408,
+  "MLPs._fc_deter.0": 45097156608,
+  "MLPs._fc_deter.3": 17985175552,
+  "MLPs._fc_stoch": 78114717696,
+  "MLPs._net": 27966832640,
+  "MLPs._net.0": 8992587776,
+  "MLPs._net.3": 8992587776,
+  "MLPs._net.6": 7240941568,
+  "GaussianPolicy.mlp._fc_deter": 828024553472,
+  "GaussianPolicy.mlp._fc_deter.0": 819703054336,
+  "GaussianPolicy": 859772813312,
+  "GaussianPolicy.mlp": 859772813312,
+  "GaussianPolicy.mlp._fc_deter.3": 12616466432,
+  "GaussianPolicy.mlp._fc_stoch": 829769383936,
+  "GaussianPolicy.mlp._net": 19442171904,
+  "GaussianPolicy.mlp._net.0": 6308233216,
+  "GaussianPolicy.mlp._net.3": 6308233216,
+  "GaussianPolicy.mlp._net.6": 6308233216,
+  "GaussianPolicy.mlp._net.9": 517472256,
+  "BlockGRUCell._in_deter": 271754723328,
+  "BlockGRUCell._in_deter.0": 271754723328,
+  "BlockGRUCell": 685936869376,
+  "BlockGRUCell._in_stoch.0": 109924319232,
+  "BlockGRUCell._in_stoch": 109924319232,
+  "BlockGRUCell._in_action.0": 90861207552,
+  "BlockGRUCell._in_action": 90861207552,
+  "BlockGRUCell._dynlayers.0": 618475290624,
+  "BlockGRUCell._dynlayers": 618475290624,
+  "BlockGRUCell._dyngru": 463856467968,
+  "Sequential.0": 154618822656,
+  "Sequential": 212600881152,
+  "Sequential.3": 19327352832,
+  "Sequential.6": 38654705664,
+  "MLPs._net.9": 2740715520
+ },
+ "flops_ac_update_128starts_total": 1701369872384,
+ "flops_note": "AC FLOPs measured with 128 start states; imagination/actor/critic FLOPs scale linearly with starts (x8 for the original 1024). Reward-head update is independent of starts.",
+ "freeze_table": {
+  "full (all WM)": {
+   "ms": 1207.9287997931242,
+   "phases": {
+    "wm_fwd_encoder": 25.1418399810791,
+    "wm_fwd_rssm_observe": 252.4696807861328,
+    "wm_fwd_kl": 3.7800480127334595,
+    "wm_fwd_decoder": 48.12246513366699,
+    "wm_fwd_recon_loss": 0.49723200500011444,
+    "wm_bwd": 821.0665893554688,
+    "wm_opt_clip": 8.048128128051758,
+    "wm_opt_adam": 48.80281639099121
+   },
+   "peak_GiB": 8.556495666503906,
+   "trainable_params": 281384259,
+   "tflops": 3.45320718336
+  },
+  "freeze encoder": {
+   "ms": 1151.8942039310932,
+   "phases": {
+    "wm_fwd_encoder": 25.158095359802246,
+    "wm_fwd_rssm_observe": 253.95763397216797,
+    "wm_fwd_kl": 3.4551360607147217,
+    "wm_fwd_decoder": 48.32404899597168,
+    "wm_fwd_recon_loss": 0.49619200825691223,
+    "wm_bwd": 765.0314331054688,
+    "wm_opt_clip": 8.047103881835938,
+    "wm_opt_adam": 47.424560546875
+   },
+   "peak_GiB": 8.929542541503906,
+   "trainable_params": 275182179,
+   "tflops": 2.956122390528
+  },
+  "freeze decoder": {
+   "ms": 1163.032174617052,
+   "phases": {
+    "wm_fwd_encoder": 25.120880126953125,
+    "wm_fwd_rssm_observe": 252.6709747314453,
+    "wm_fwd_kl": 3.406000018119812,
+    "wm_fwd_decoder": 48.174448013305664,
+    "wm_fwd_recon_loss": 0.49612799286842346,
+    "wm_bwd": 789.7154235839844,
+    "wm_opt_clip": 6.01036810874939,
+    "wm_opt_adam": 37.43795204162598
+   },
+   "peak_GiB": 10.039958953857422,
+   "trainable_params": 216319200,
+   "tflops": 2.982018023424
+  },
+  "freeze enc+dec (train RSSM)": {
+   "ms": 1099.9114953279495,
+   "phases": {
+    "wm_fwd_encoder": 25.02246379852295,
+    "wm_fwd_rssm_observe": 252.2388458251953,
+    "wm_fwd_kl": 3.402143955230713,
+    "wm_fwd_decoder": 48.01268768310547,
+    "wm_fwd_recon_loss": 0.49830400943756104,
+    "wm_bwd": 728.50439453125,
+    "wm_opt_clip": 6.005087852478027,
+    "wm_opt_adam": 36.22756767272949
+   },
+   "peak_GiB": 7.877960205078125,
+   "trainable_params": 210117120,
+   "tflops": 2.484933230592
+  },
+  "freeze RSSM core (GRU)": {
+   "ms": 794.5708668231964,
+   "phases": {
+    "wm_fwd_encoder": 25.00441551208496,
+    "wm_fwd_rssm_observe": 252.4423370361328,
+    "wm_fwd_kl": 3.3914079666137695,
+    "wm_fwd_decoder": 48.02920150756836,
+    "wm_fwd_recon_loss": 0.5008159875869751,
+    "wm_bwd": 440.1597442626953,
+    "wm_opt_clip": 3.380735993385315,
+    "wm_opt_adam": 21.662208557128906
+   },
+   "peak_GiB": 8.695098400115967,
+   "trainable_params": 125550915,
+   "tflops": 3.12880398336
+  },
+  "freeze RSSM (all), train enc+dec": {
+   "ms": 657.77433142066,
+   "phases": {
+    "wm_fwd_encoder": 25.01529598236084,
+    "wm_fwd_rssm_observe": 250.8575668334961,
+    "wm_fwd_kl": 3.3653279542922974,
+    "wm_fwd_decoder": 47.99100685119629,
+    "wm_fwd_recon_loss": 0.4986880123615265,
+    "wm_bwd": 315.8814697265625,
+    "wm_opt_clip": 1.9588479399681091,
+    "wm_opt_adam": 12.206128120422363
+   },
+   "peak_GiB": 7.536441326141357,
+   "trainable_params": 71267139,
+   "tflops": 3.01744521216
+  },
+  "train RSSM heads only (prior+post)": {
+   "ms": 693.5253516435623,
+   "phases": {
+    "wm_fwd_encoder": 25.071104049682617,
+    "wm_fwd_rssm_observe": 252.80818939208984,
+    "wm_fwd_kl": 3.3780319690704346,
+    "wm_fwd_decoder": 48.11979293823242,
+    "wm_fwd_recon_loss": 0.5048320293426514,
+    "wm_bwd": 352.68096923828125,
+    "wm_opt_clip": 1.566208004951477,
+    "wm_opt_adam": 9.396224021911621
+   },
+   "peak_GiB": 5.370349407196045,
+   "trainable_params": 54283776,
+   "tflops": 2.159775055872
+  },
+  "train decoder only": {
+   "ms": 402.92195673286915,
+   "phases": {
+    "wm_fwd_encoder": 25.086992263793945,
+    "wm_fwd_rssm_observe": 251.61933135986328,
+    "wm_fwd_kl": 3.594208002090454,
+    "wm_fwd_decoder": 47.89868927001953,
+    "wm_fwd_recon_loss": 0.4928479939699173,
+    "wm_bwd": 61.229087829589844,
+    "wm_opt_clip": 1.7105439901351929,
+    "wm_opt_adam": 11.290256023406982
+   },
+   "peak_GiB": 4.552534580230713,
+   "trainable_params": 65065059,
+   "tflops": 2.067753074688
+  },
+  "train encoder only": {
+   "ms": 616.0272509455681,
+   "phases": {
+    "wm_fwd_encoder": 24.997888565063477,
+    "wm_fwd_rssm_observe": 253.25313568115234,
+    "wm_fwd_kl": 3.4368480443954468,
+    "wm_fwd_decoder": 47.94192123413086,
+    "wm_fwd_recon_loss": 0.4941119998693466,
+    "wm_bwd": 285.08363342285156,
+    "wm_opt_clip": 0.10342399775981903,
+    "wm_opt_adam": 0.7162880003452301
+   },
+   "peak_GiB": 6.518977642059326,
+   "trainable_params": 6202080,
+   "tflops": 2.546256052224
+  },
+  "no WM update (fwd observe for starts)": {
+   "ms": 274.03618907928467,
+   "phases": {
+    "fwd_encoder": 25.04700756072998,
+    "fwd_observe": 248.9891815185547
+   },
+   "peak_GiB": 2.4841713905334473,
+   "trainable_params": 0,
+   "tflops": 0.683176624128
+  }
+ }
+}

@@ -1,0 +1,11 @@
+2026-10-24 16:53:24 start wm_off | --wm_every 0
+2026-10-24 16:53:50 runner replaced (keeps per-arm buffers); waiting for wm_off pid 805890
+2026-10-24 18:18:21 end wm_off (started by previous runner)
+2026-10-24 18:18:21 start full_rep | --wm_every 1
+2026-10-24 20:21:44 end full_rep exit=0
+2026-10-24 20:21:44 start wm_every4 | --wm_every 4
+2026-10-24 21:56:06 end wm_every4 exit=0
+2026-10-24 21:56:06 start s20_full | --wm_every 1 --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+2026-10-24 22:22:30 pending reordered by user request (+ strict_off, start evals, full_to60k for the 60k state); previous list saved in pending_before_2026-10-24_reorder.txt
+2026-10-24 23:59:43 end s20_full exit=0
+2026-10-24 23:59:43 start s20_wm_off | --strict_off --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt

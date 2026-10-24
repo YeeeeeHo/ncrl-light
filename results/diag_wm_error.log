@@ -1,0 +1,57 @@
+on_bc 15 episodes -> (96, 64, 3, 64, 64)
+on_rl 25 episodes -> (96, 64, 3, 64, 64)
+on_new 11 episodes -> (96, 64, 3, 64, 64)
+prior 500 episodes -> (96, 64, 3, 64, 64)
+walker 400 episodes -> (96, 64, 3, 64, 64)
+cheetah 400 episodes -> (96, 64, 3, 64, 64)
+cartpole 400 episodes -> (96, 64, 3, 64, 64)
+acrobot 400 episodes -> (96, 64, 3, 64, 64)
+pre on_bc {'recon': 10.774, 'kl': 16.095, 'openloop': 66.601, 'openloop_h1_8': 33.259, 'openloop_h25_32': 86.454}
+pre on_rl {'recon': 13.371, 'kl': 21.895, 'openloop': 73.442, 'openloop_h1_8': 42.742, 'openloop_h25_32': 95.005}
+pre on_new {'recon': 14.382, 'kl': 22.847, 'openloop': 90.285, 'openloop_h1_8': 51.765, 'openloop_h25_32': 115.243}
+pre prior {'recon': 9.571, 'kl': 10.186, 'openloop': 65.276, 'openloop_h1_8': 25.764, 'openloop_h25_32': 101.304}
+pre walker {'recon': 8.227, 'kl': 11.702, 'openloop': 151.116, 'openloop_h1_8': 47.464, 'openloop_h25_32': 238.856}
+pre cheetah {'recon': 2.105, 'kl': 4.446, 'openloop': 22.862, 'openloop_h1_8': 5.598, 'openloop_h25_32': 37.229}
+pre cartpole {'recon': 0.656, 'kl': 2.097, 'openloop': 5.659, 'openloop_h1_8': 1.34, 'openloop_h25_32': 9.853}
+pre acrobot {'recon': 0.513, 'kl': 1.999, 'openloop': 4.079, 'openloop_h1_8': 1.231, 'openloop_h25_32': 6.731}
+ft20 on_bc {'recon': 3.762, 'kl': 3.481, 'openloop': 10.762, 'openloop_h1_8': 5.728, 'openloop_h25_32': 15.858, 'reward_err': 0.007, 'value_gap': 0.189, 'value_gap_h25_32': 0.219}
+ft20 on_rl {'recon': 12.047, 'kl': 14.292, 'openloop': 53.017, 'openloop_h1_8': 31.026, 'openloop_h25_32': 67.45, 'reward_err': 0.277, 'value_gap': 0.947, 'value_gap_h25_32': 1.184}
+ft20 on_new {'recon': 14.243, 'kl': 19.021, 'openloop': 82.533, 'openloop_h1_8': 46.715, 'openloop_h25_32': 105.208, 'reward_err': 0.418, 'value_gap': 1.199, 'value_gap_h25_32': 2.053}
+ft20 prior {'recon': 10.019, 'kl': 10.68, 'openloop': 70.725, 'openloop_h1_8': 26.819, 'openloop_h25_32': 109.888, 'reward_err': 0.26, 'value_gap': 1.15, 'value_gap_h25_32': 1.728}
+ft20 walker {'recon': 11.937, 'kl': 14.307, 'openloop': 155.863, 'openloop_h1_8': 57.332, 'openloop_h25_32': 230.354}
+ft20 cheetah {'recon': 3.875, 'kl': 6.507, 'openloop': 25.894, 'openloop_h1_8': 8.008, 'openloop_h25_32': 42.18}
+ft20 cartpole {'recon': 2.032, 'kl': 4.719, 'openloop': 13.068, 'openloop_h1_8': 4.176, 'openloop_h25_32': 19.954}
+ft20 acrobot {'recon': 1.577, 'kl': 3.713, 'openloop': 6.998, 'openloop_h1_8': 2.569, 'openloop_h25_32': 11.029}
+ft40 on_bc {'recon': 3.561, 'kl': 3.206, 'openloop': 9.063, 'openloop_h1_8': 5.544, 'openloop_h25_32': 12.003, 'reward_err': 0.006, 'value_gap': 0.347, 'value_gap_h25_32': 0.395}
+ft40 on_rl {'recon': 4.623, 'kl': 3.728, 'openloop': 10.845, 'openloop_h1_8': 7.543, 'openloop_h25_32': 13.458, 'reward_err': 0.064, 'value_gap': 0.349, 'value_gap_h25_32': 0.461}
+ft40 on_new {'recon': 13.047, 'kl': 18.611, 'openloop': 72.96, 'openloop_h1_8': 41.564, 'openloop_h25_32': 93.716, 'reward_err': 0.288, 'value_gap': 1.388, 'value_gap_h25_32': 2.127}
+ft40 prior {'recon': 10.012, 'kl': 10.496, 'openloop': 66.254, 'openloop_h1_8': 28.3, 'openloop_h25_32': 100.147, 'reward_err': 0.288, 'value_gap': 1.732, 'value_gap_h25_32': 2.707}
+ft40 walker {'recon': 18.66, 'kl': 19.938, 'openloop': 164.878, 'openloop_h1_8': 68.044, 'openloop_h25_32': 229.91}
+ft40 cheetah {'recon': 7.428, 'kl': 8.246, 'openloop': 32.771, 'openloop_h1_8': 12.221, 'openloop_h25_32': 50.806}
+ft40 cartpole {'recon': 31.57, 'kl': 12.556, 'openloop': 57.251, 'openloop_h1_8': 43.224, 'openloop_h25_32': 66.081}
+ft40 acrobot {'recon': 4.272, 'kl': 5.824, 'openloop': 11.506, 'openloop_h1_8': 5.749, 'openloop_h25_32': 16.118}
+drift ft20 {'decoder.conv': 0.064, 'decoder.fc': 0.0607, 'encoder': 0.034, 'rssm._posterior': 0.0508, 'rssm._prior': 0.0571, 'rssm.gru._dyngru': 0.0656, 'rssm.gru._dynlayers': 0.0691, 'rssm.gru._in_action': 0.0137, 'rssm.gru._in_deter': 0.0619, 'rssm.gru._in_stoch': 0.0896}
+drift ft40 {'decoder.conv': 0.1182, 'decoder.fc': 0.1116, 'encoder': 0.0579, 'rssm._posterior': 0.0885, 'rssm._prior': 0.1024, 'rssm.gru._dyngru': 0.1163, 'rssm.gru._dynlayers': 0.1168, 'rssm.gru._in_action': 0.0215, 'rssm.gru._in_deter': 0.1102, 'rssm.gru._in_stoch': 0.1513}
+drift ft20_to_ft40 {'decoder.conv': 0.0854, 'decoder.fc': 0.0854, 'encoder': 0.0412, 'rssm._posterior': 0.0718, 'rssm._prior': 0.0801, 'rssm.gru._dyngru': 0.0921, 'rssm.gru._dynlayers': 0.0913, 'rssm.gru._in_action': 0.0122, 'rssm.gru._in_deter': 0.0887, 'rssm.gru._in_stoch': 0.1227}
+revert encoder on_new {'recon': 16.676, 'kl': 18.736, 'openloop': 74.264, 'openloop_h1_8': 43.081, 'openloop_h25_32': 94.699, 'reward_err': 0.289, 'value_gap': 1.429, 'value_gap_h25_32': 2.276}
+revert encoder prior {'recon': 12.024, 'kl': 11.826, 'openloop': 66.93, 'openloop_h1_8': 30.528, 'openloop_h25_32': 99.837, 'reward_err': 0.286, 'value_gap': 1.737, 'value_gap_h25_32': 2.62}
+revert encoder walker {'recon': 18.636, 'kl': 18.367, 'openloop': 164.331, 'openloop_h1_8': 66.77, 'openloop_h25_32': 228.68}
+revert decoder on_new {'recon': 18.314, 'kl': 18.611, 'openloop': 75.2, 'openloop_h1_8': 44.825, 'openloop_h25_32': 95.955, 'reward_err': 0.288, 'value_gap': 1.388, 'value_gap_h25_32': 2.127}
+revert decoder prior {'recon': 12.673, 'kl': 10.496, 'openloop': 67.41, 'openloop_h1_8': 30.411, 'openloop_h25_32': 100.472, 'reward_err': 0.288, 'value_gap': 1.732, 'value_gap_h25_32': 2.707}
+revert decoder walker {'recon': 11.663, 'kl': 19.938, 'openloop': 170.623, 'openloop_h1_8': 66.735, 'openloop_h25_32': 240.87}
+revert rssm.gru on_new {'recon': 15.887, 'kl': 23.307, 'openloop': 85.616, 'openloop_h1_8': 52.413, 'openloop_h25_32': 106.685, 'reward_err': 0.282, 'value_gap': 1.383, 'value_gap_h25_32': 2.232}
+revert rssm.gru prior {'recon': 10.407, 'kl': 12.094, 'openloop': 69.271, 'openloop_h1_8': 30.771, 'openloop_h25_32': 101.394, 'reward_err': 0.291, 'value_gap': 1.921, 'value_gap_h25_32': 2.999}
+revert rssm.gru walker {'recon': 16.383, 'kl': 16.757, 'openloop': 145.455, 'openloop_h1_8': 51.648, 'openloop_h25_32': 223.307}
+revert rssm.prior on_new {'recon': 13.047, 'kl': 21.211, 'openloop': 73.883, 'openloop_h1_8': 41.731, 'openloop_h25_32': 94.103, 'reward_err': 0.288, 'value_gap': 1.586, 'value_gap_h25_32': 2.879}
+revert rssm.prior prior {'recon': 10.012, 'kl': 11.544, 'openloop': 66.999, 'openloop_h1_8': 28.407, 'openloop_h25_32': 100.788, 'reward_err': 0.288, 'value_gap': 1.712, 'value_gap_h25_32': 2.775}
+revert rssm.prior walker {'recon': 18.66, 'kl': 17.98, 'openloop': 162.77, 'openloop_h1_8': 67.826, 'openloop_h25_32': 232.877}
+revert rssm.posterior on_new {'recon': 13.863, 'kl': 21.284, 'openloop': 72.634, 'openloop_h1_8': 41.455, 'openloop_h25_32': 93.599, 'reward_err': 0.289, 'value_gap': 1.386, 'value_gap_h25_32': 2.11}
+revert rssm.posterior prior {'recon': 10.318, 'kl': 11.66, 'openloop': 66.41, 'openloop_h1_8': 27.976, 'openloop_h25_32': 102.949, 'reward_err': 0.288, 'value_gap': 1.822, 'value_gap_h25_32': 2.776}
+revert rssm.posterior walker {'recon': 18.447, 'kl': 18.931, 'openloop': 163.475, 'openloop_h1_8': 66.15, 'openloop_h25_32': 229.03}
+revert encoder+decoder on_new {'recon': 14.967, 'kl': 18.736, 'openloop': 75.309, 'openloop_h1_8': 43.975, 'openloop_h25_32': 96.284, 'reward_err': 0.289, 'value_gap': 1.429, 'value_gap_h25_32': 2.276}
+revert encoder+decoder prior {'recon': 10.627, 'kl': 11.826, 'openloop': 67.359, 'openloop_h1_8': 30.844, 'openloop_h25_32': 99.968, 'reward_err': 0.286, 'value_gap': 1.737, 'value_gap_h25_32': 2.62}
+revert encoder+decoder walker {'recon': 10.275, 'kl': 18.367, 'openloop': 169.834, 'openloop_h1_8': 65.0, 'openloop_h25_32': 239.325}
+revert rssm (all) on_new {'recon': 16.936, 'kl': 26.35, 'openloop': 89.723, 'openloop_h1_8': 52.705, 'openloop_h25_32': 114.06, 'reward_err': 0.28, 'value_gap': 1.813, 'value_gap_h25_32': 2.925}
+revert rssm (all) prior {'recon': 10.802, 'kl': 12.497, 'openloop': 70.058, 'openloop_h1_8': 29.97, 'openloop_h25_32': 106.344, 'reward_err': 0.29, 'value_gap': 2.043, 'value_gap_h25_32': 3.205}
+revert rssm (all) walker {'recon': 16.128, 'kl': 13.774, 'openloop': 146.214, 'openloop_h1_8': 52.139, 'openloop_h25_32': 220.987}
+saved ../results/diag_wm_error.json

@@ -1,0 +1,21 @@
+{
+ "mode": "eval",
+ "passed": true,
+ "info": {
+  "snapshot": "/home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_40000.full.pt",
+  "base_run": "/home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1",
+  "global_frame": 40000,
+  "global_step": 20000,
+  "epoch": 40,
+  "eval_episodes": 1,
+  "seed": 7,
+  "eval_env_seed": 11,
+  "avg_episode_reward": 603.5612921022082,
+  "episode_returns": [
+   603.5612921022082
+  ],
+  "se": null,
+  "device": "cpu",
+  "seconds": 47.56429576873779
+ }
+}

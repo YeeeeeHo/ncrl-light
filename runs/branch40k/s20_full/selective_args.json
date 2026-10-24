@@ -1,0 +1,1 @@
+{"wm_every": 1, "freeze": [], "branch_args": ["--base_run", "/home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1", "--snapshot", "/home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt", "--out", "s20_full", "--epochs", "20"]}

@@ -1,0 +1,9 @@
+{
+ "wm_steps": 625,
+ "updates": 2500,
+ "rel_change_encoder": 0.021676646344510032,
+ "rel_change_decoder": 0.040773034619406526,
+ "rel_change_gru": 0.047480493022940884,
+ "rel_change_prior": 0.03931652542922114,
+ "rel_change_posterior": 0.03589426579904223
+}

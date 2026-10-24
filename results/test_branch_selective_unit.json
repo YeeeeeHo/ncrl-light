@@ -1,0 +1,184 @@
+{
+ "mode": "unit",
+ "passed": true,
+ "info": {
+  "cases": {
+   "strict": {
+    "case": "strict",
+    "wm_steps_per_update": [
+     0,
+     0,
+     0
+    ],
+    "wm.encoder.": {
+     "identical": true,
+     "mean_ratio_first3": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    "wm.rssm.": {
+     "identical": true,
+     "mean_ratio_first3": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    "wm.decoder.": {
+     "identical": true,
+     "mean_ratio_first3": [
+      1.0,
+      1.0,
+      1.0
+     ]
+    },
+    "wm.reward_model.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9649789477467278,
+      0.994940845711509,
+      1.0000075038988143
+     ]
+    },
+    "_task_behavior.actor.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      1.013311564154659,
+      1.0860646006487369,
+      0.9999990758369677
+     ]
+    },
+    "_task_behavior.critic.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9904675087570154,
+      0.9123646475767856,
+      1.0000056283315644
+     ]
+    }
+   },
+   "off": {
+    "case": "off",
+    "wm_steps_per_update": [
+     0,
+     0,
+     0
+    ],
+    "wm.encoder.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9999969528462366,
+      0.9999969514372714,
+      0.9999969601631165
+     ]
+    },
+    "wm.rssm.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9999969559246794,
+      0.9999969579367965,
+      0.9999969601631165
+     ]
+    },
+    "wm.decoder.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9999969557763337,
+      0.9999969569881804,
+      0.9999969601631165
+     ]
+    },
+    "wm.reward_model.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9649790388164647,
+      0.9949408518557517,
+      1.0000075038406067
+     ]
+    },
+    "_task_behavior.actor.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      1.0133115331660538,
+      1.086064536642545,
+      0.9999990758369677
+     ]
+    },
+    "_task_behavior.critic.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9904676429068211,
+      0.9123646622641026,
+      1.000005628389772
+     ]
+    }
+   },
+   "every2": {
+    "case": "every2",
+    "wm_steps_per_update": [
+     1,
+     0,
+     1
+    ],
+    "wm.encoder.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9980034906298775,
+      1.0046187756006277,
+      0.9999615680426359
+     ]
+    },
+    "wm.rssm.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      1.0005694655313868,
+      1.008008772921659,
+      1.0000003491295502
+     ]
+    },
+    "wm.decoder.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9655819786962523,
+      0.7123022417916576,
+      1.0000059120939113
+     ]
+    },
+    "wm.reward_model.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      1.0803358204831834,
+      0.9962676599270623,
+      1.0000063678016886
+     ]
+    },
+    "_task_behavior.actor.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      0.9850331062725083,
+      1.0827135032638662,
+      0.9999986412585713
+     ]
+    },
+    "_task_behavior.critic.": {
+     "identical": false,
+     "mean_ratio_first3": [
+      1.092862289463905,
+      0.914795294466716,
+      1.0000044935732149
+     ]
+    }
+   }
+  },
+  "checks": {
+   "strict: encoder/rssm/decoder identical": true,
+   "strict: reward/actor/critic changed": true,
+   "strict: 0 WM steps": true,
+   "off: WM not identical (decay only)": true,
+   "off: WM ratio == (1-1e-6)^3": true,
+   "every2: WM steps [1,0,1]": true
+  }
+ }
+}

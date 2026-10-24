@@ -1,0 +1,3 @@
+{"kind": "start", "global_step": 20000, "global_frame": 40000, "epoch": 40, "wall": 0.0001685619354248047, "starts": null, "seed": 7, "snapshot": "/home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_40000.full.pt"}
+{"kind": "epoch", "global_step": 20500, "global_frame": 41000, "epoch": 41, "wall": 294.5934658050537, "train_return": 506.1701009017867, "collect_s": 4.907364368438721, "update_s": 289.6857011318207, "updates": 125, "epoch_s": 294.5930690765381}
+{"kind": "end", "global_step": 20500, "global_frame": 41000, "epoch": 41, "wall": 294.59350991249084}

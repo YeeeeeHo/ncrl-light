@@ -1,0 +1,28 @@
+{
+ "mode": "resume",
+ "passed": true,
+ "info": {
+  "keys": [
+   "ac_updates",
+   "actor_opt",
+   "agent",
+   "critic_opt",
+   "model_opt",
+   "replay_manifest",
+   "rng",
+   "workspace"
+  ],
+  "start": {
+   "kind": "start",
+   "global_step": 20000,
+   "global_frame": 40000,
+   "epoch": 40,
+   "wall": 6.031990051269531e-05,
+   "starts": null,
+   "seed": 7,
+   "snapshot": "/tmp/claude-1000/-home-yeho--claude-spares-spare-mDbVz8/be2f29b6-c151-4527-a58b-288dc9c3032e/scratchpad/bs_test/fake_base/state_test.full.pt"
+  },
+  "n_online": 51,
+  "n_prior": 500
+ }
+}

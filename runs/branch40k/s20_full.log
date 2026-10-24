@@ -1,0 +1,8 @@
+[W1024 21:56:56.351808036 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 37486592, total: 12434079744).
+Found 285716546 model parameters.
+Found 4486698 actor parameters.
+Found 4595967 critic parameters.
+epoch 30: eval 529.6100345011344
+[W1024 23:16:30.884504146 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 32374784, total: 12434079744).
+epoch 40: eval 707.3603022420604
+selective_end {'wm_steps': 2500, 'updates': 2500, 'rel_change_encoder': 0.04075284268560673, 'rel_change_decoder': 0.08746867064896138, 'rel_change_gru': 0.0955516600845556, 'rel_change_prior': 0.08246313673551943, 'rel_change_posterior': 0.07337463905407567}

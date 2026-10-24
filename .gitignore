@@ -1,0 +1,9 @@
+# replay data copied into each branch arm (GBs) and model states
+runs/**/buffer/
+runs/**/prior_buffer/
+*.pt
+*.npz
+# python / editor
+__pycache__/
+*.pyc
+runs/**/pending.tmp

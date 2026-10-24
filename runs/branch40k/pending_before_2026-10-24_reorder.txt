@@ -1,0 +1,8 @@
+# One arm per line: name|branch_selective args (before "--"). The runner takes the first non-comment line when the
+# GPU is free and deletes it from this file, so lines not yet started can be edited, reordered or removed any time.
+# Default snapshot = 40k frames (evals at 50k/60k). s20_* arms branch from the 20k state (evals at 30k/40k).
+s20_wm_off|--wm_every 0 --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+s20_wm_every4|--wm_every 4 --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+wm_every2|--wm_every 2
+wm_every8|--wm_every 8
+freeze_gru|--freeze gru

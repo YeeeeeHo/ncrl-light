@@ -1,0 +1,47 @@
+Copying the pretrained world model
+{
+ "wm.encoder": 6202080,
+ "wm.rssm._gru._in_deter": 18878976,
+ "wm.rssm._gru._in_stoch": 4723200,
+ "wm.rssm._gru._in_action": 36864,
+ "wm.rssm._gru._dynlayers": 75534336,
+ "wm.rssm._gru._dyngru": 56659968,
+ "wm.rssm._prior": 25964544,
+ "wm.rssm._posterior": 28319232,
+ "wm.decoder._fc_deter": 14168064,
+ "wm.decoder._fc_stoch": 18886656,
+ "wm.decoder._conv_model": 32010339,
+ "wm.reward_model": 4332287,
+ "ac.actor": 4486698,
+ "ac.critic": 4595967,
+ "ac._target_critic": 4595967,
+ "TOTAL wm (incl. reward)": 285716546,
+ "TOTAL ac (incl. target)": 13678632
+}
+WM update (ms): {'wm_fwd_encoder': 25.2, 'wm_fwd_rssm_observe': 252.4, 'wm_fwd_kl': 3.4, 'wm_fwd_decoder': 48.1, 'wm_fwd_recon_loss': 0.5, 'wm_bwd': 820.9, 'wm_opt_clip': 8.2, 'wm_opt_weight_decay': 5.4, 'wm_opt_adam': 48.9, 'wm_opt_zero_grad': 0.0} sum 1212.9
+Found 285716546 model parameters.
+original_128 {'reward_head_update': 8.5, 'imag_rollout_fwd': 77.5, 'imag_reward_value_target_fwd': 3.1, 'actor_loss_fwd': 1.4, 'actor_bwd_through_dynamics': 78.5, 'actor_opt': 0.8, 'critic_fwd': 1.9, 'critic_bwd': 2.1, 'critic_opt': 0.9, 'slow_target': 0.3} sum 174.9 peak 5.46 base 3.43
+original_256 {'reward_head_update': 8.6, 'imag_rollout_fwd': 136.5, 'imag_reward_value_target_fwd': 6.2, 'actor_loss_fwd': 3.0, 'actor_bwd_through_dynamics': 150.6, 'actor_opt': 0.7, 'critic_fwd': 3.5, 'critic_bwd': 4.1, 'critic_opt': 0.9, 'slow_target': 0.3} sum 314.4 peak 7.23 base 3.46
+[W1024 16:40:31.010735510 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 49545216, total: 12434079744).
+[W1024 16:40:31.047287127 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 49676288, total: 12434079744).
+original_512 OOM
+[W1024 16:40:32.531388295 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 56033280, total: 12434079744).
+[W1024 16:40:32.555204256 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 56033280, total: 12434079744).
+original_1024 OOM
+ckpt_1024 {'reward_head_update': 9.0, 'imag_rollout_fwd': 521.1, 'imag_reward_value_target_fwd': 25.2, 'actor_loss_fwd': 11.2, 'actor_bwd_through_dynamics': 1111.3, 'actor_opt': 0.9, 'critic_fwd': 13.1, 'critic_bwd': 17.6, 'critic_opt': 0.7, 'slow_target': 0.3} sum 1710.4 peak 8.2 base 3.46
+[W1024 16:40:51.025815819 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 39976960, total: 12434079744).
+[W1024 16:40:51.027090423 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 39976960, total: 12434079744).
+slim_1024 OOM
+FLOPs WM update total (TFLOP): 3.45320718336
+FLOPs AC update @128 starts (TFLOP): 1.701369872384
+full (all WM)                              1207.9 ms  peak  8.56 GiB  trainable  281.4M    3.45 TFLOP
+freeze encoder                             1151.9 ms  peak  8.93 GiB  trainable  275.2M    2.96 TFLOP
+freeze decoder                             1163.0 ms  peak 10.04 GiB  trainable  216.3M    2.98 TFLOP
+freeze enc+dec (train RSSM)                1099.9 ms  peak  7.88 GiB  trainable  210.1M    2.48 TFLOP
+freeze RSSM core (GRU)                      794.6 ms  peak  8.70 GiB  trainable  125.6M    3.13 TFLOP
+freeze RSSM (all), train enc+dec            657.8 ms  peak  7.54 GiB  trainable   71.3M    3.02 TFLOP
+train RSSM heads only (prior+post)          693.5 ms  peak  5.37 GiB  trainable   54.3M    2.16 TFLOP
+train decoder only                          402.9 ms  peak  4.55 GiB  trainable   65.1M    2.07 TFLOP
+train encoder only                          616.0 ms  peak  6.52 GiB  trainable    6.2M    2.55 TFLOP
+no WM update (fwd observe for starts)       274.0 ms  peak  2.48 GiB  trainable    0.0M    0.68 TFLOP
+saved ../results/profile_update.json
