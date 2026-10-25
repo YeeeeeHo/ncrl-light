@@ -72,7 +72,7 @@ Quadruped Walk 원본 실행의 20k·40k frame 스냅샷으로 forward만 수행
 
 **설계**
 - 처음부터 학습(1회 15시간)하는 대신, 저장된 학습 상태에서 **분기**한다. 저장된 상태에는 모든 파라미터, Adam 상태 3개, BC 정책, 카운터, 리플레이 목록이 들어 있다.
-- 각 팔은 20 epoch(+20k frame) 동안 **WM 업데이트 횟수만** 바꾼다. env step, actor-critic 업데이트(2500회), 상상 시작점(1024)은 모두 원본과 같다.
+- 각 arm은 20 epoch(+20k frame) 동안 **WM 업데이트 횟수만** 바꾼다. env step, actor-critic 업데이트(2500회), 상상 시작점(1024)은 모두 원본과 같다.
 - 분기 시점: 20k / 40k / 60k frame. 목적은 WM 업데이트를 멈췄을 때의 손실이 학습 시점에 따라 달라지는지 확인하는 것이다.
 
 **40k에서 분기한 결과 (seed 1, 원본 반복 3회)**
@@ -84,7 +84,7 @@ Quadruped Walk 원본 실행의 20k·40k frame 스냅샷으로 forward만 수행
 | Every8 | 313 | 770 | **683** | 701 | −199 | 263 s (−26%) |
 | OFF † | 0 | 759 | **711** | 702 | −171 | 247 s (−31%) |
 
-† gradient 업데이트는 0회지만, NCRL 옵티마이저의 reward-head 단계 weight decay로 WM이 0.25% 줄었다. 20k·60k의 OFF 팔은 `--strict_off`로 WM을 비트 단위로 고정했다.
+† gradient 업데이트는 0회지만, NCRL 옵티마이저의 reward-head 단계 weight decay로 WM이 0.25% 줄었다. 20k·60k의 OFF arm은 `--strict_off`로 WM을 비트 단위로 고정했다.
 
 - 성능은 WM 빈도에 대해 완만하게 줄지 않았다. 1/4는 원본 수준이고, 1/8은 OFF와 비슷하게 떨어졌다. 1/4 → 1/8로 얻는 시간은 3%p뿐이다.
 - 1/8과 OFF(40k), OFF(60k) 모두 +10k에서는 원본과 비슷하다가 +20k에서 떨어졌다. 손실이 **늦게** 나타난다.
@@ -165,7 +165,7 @@ ncrl_light/
 │   ├── equiv_test2.py           # 패치 동등성 테스트
 │   └── prep_db.py, bench_update.py
 ├── results/                     # 측정 JSON·로그·중간 보고
-└── runs/branch40k/              # 분기 파일럿 (큐, 팔별 로그; 리플레이 버퍼는 제외)
+└── runs/branch40k/              # 분기 파일럿 (큐, arm별 로그; 리플레이 버퍼는 제외)
 ```
 
 ## 9. 재현
