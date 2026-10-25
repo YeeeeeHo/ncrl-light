@@ -9,3 +9,23 @@
 2026-10-24 22:22:30 pending reordered by user request (+ strict_off, start evals, full_to60k for the 60k state); previous list saved in pending_before_2026-10-24_reorder.txt
 2026-10-24 23:59:43 end s20_full exit=0
 2026-10-24 23:59:43 start s20_wm_off | --strict_off --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+2026-10-25 01:22:20 end s20_wm_off exit=0
+2026-10-25 01:22:20 start eval_s20 | --eval_only --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+2026-10-25 01:22:58 end eval_s20 exit=0
+2026-10-25 01:22:58 start eval_s40 | --eval_only
+2026-10-25 01:23:37 end eval_s40 exit=0
+2026-10-25 01:23:37 start full_to60k | --wm_every 1 --save_end_state state_60000.full.pt
+2026-10-25 03:24:07 end full_to60k exit=0
+2026-10-25 03:24:07 start eval_s60 | --eval_only --base_run_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k --snapshot_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k/state_60000.full.pt
+2026-10-25 03:24:47 end eval_s60 exit=0
+2026-10-25 03:24:47 start s60_full | --wm_every 1 --base_run_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k --snapshot_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k/state_60000.full.pt
+2026-10-25 05:33:03 end s60_full exit=0
+2026-10-25 05:33:03 start s60_wm_off | --strict_off --base_run_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k --snapshot_override /home/yeho/RL/ncrl_light/runs/branch40k/full_to60k/state_60000.full.pt
+2026-10-25 07:00:28 end s60_wm_off exit=0
+2026-10-25 07:00:28 start s20_wm_every4 | --wm_every 4 --snapshot_override /home/yeho/RL/ncrl_runs/baseline/logs/finetune/dmc-quadruped-walk/09af53c751cc43f5b4f6d07d6a082f14_1/snapshot_20000.full.pt
+2026-10-25 08:31:34 user: hold wm_every2, freeze_gru and post-pilot profiling; finish s20_wm_every4 + wm_every8 only (list before: pending_before_hold_20261025.txt)
+2026-10-25 08:31:57 post_pilot.sh stopped (was only waiting; nothing started) - profiling on hold
+2026-10-25 08:38:39 end s20_wm_every4 exit=0
+2026-10-25 08:38:39 start wm_every8 | --wm_every 8
+2026-10-25 10:09:14 end wm_every8 exit=0
+2026-10-25 10:09:14 queue empty

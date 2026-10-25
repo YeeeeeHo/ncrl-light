@@ -1,0 +1,11 @@
+# One arm per line: name|branch_selective args (before "--"). The runner takes the first non-comment line when the
+# GPU is free and deletes it from this file, so lines not yet started can be edited, reordered or removed any time.
+# Default snapshot = 40k frames (evals at 50k/60k). s20_* from the 20k state, s60_* from the 60k state.
+# Order set by the user 2026-10-24 22:4x. --strict_off = WM bit-identical (no grad, no weight decay); the first
+# wm_off arm (40k, done) ran without it (WM shrank 0.25% by NCRL's reward-step weight decay).
+# initial performance of each branch point (no training; same eval env seed 11 and 10 episodes as in-loop evals)
+# full_rep saved no 60k state, so a 60k state is made by re-running 40k->60k with the original update and saving it
+# at the end (= a 3rd replicate of full_rep). The 60k arms branch from it.
+wm_every8|--wm_every 8
+wm_every2|--wm_every 2
+freeze_gru|--freeze gru

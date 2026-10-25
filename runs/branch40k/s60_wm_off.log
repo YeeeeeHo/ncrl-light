@@ -1,0 +1,6 @@
+Found 4332287 model parameters.
+Found 4486698 actor parameters.
+Found 4595967 critic parameters.
+epoch 70: eval 917.1814810089497
+epoch 80: eval 842.2849235391814
+selective_end {'wm_steps': 0, 'updates': 2500, 'strict_off': True, 'rel_change_encoder': 0.0, 'max_abs_change_encoder': 0.0, 'rel_change_decoder': 0.0, 'max_abs_change_decoder': 0.0, 'rel_change_gru': 0.0, 'max_abs_change_gru': 0.0, 'rel_change_prior': 0.0, 'max_abs_change_prior': 0.0, 'rel_change_posterior': 0.0, 'max_abs_change_posterior': 0.0}

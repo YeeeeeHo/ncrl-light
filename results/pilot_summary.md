@@ -2,21 +2,31 @@
 
 Quadruped Walk, one base run (seed 1), branch seed 7, 20 epochs (= +20k frames, 2500 AC updates) per arm. Eval = 10 episodes, mean action, eval env seed 11. 1 seed -> descriptive only.
 
-## Branch at 20k frames — initial performance: — (not measured yet)
+## Branch at 20k frames — initial performance: 489 ± 10 (SE, 10 ep)
 
 | arm | WM / AC updates | update s/epoch | peak VRAM GiB (alloc/reserved) | eval +10k | eval +20k (final) | eval AUC | final − full mean | train return | notes |
 |---|---|---:|---|---:|---:|---:|---:|---:|---|
-| s20_full | 2500 / 2500 | 363 | — | 530 | 707 | — | — | 373 | peak VRAM not logged |
-| s20_wm_off (running) | — | — | — | — | — | — | — | — | strict off: WM bit-identical; peak VRAM not logged |
+| s20_full | 2500 / 2500 | 363 | — | 530 | 707 | 564 | — | 373 | peak VRAM not logged |
+| s20_wm_every4 | 625 / 2500 | 286 | 10.29 / 10.81 | 529 | 510 | 514 | -197 | 380 |  |
+| s20_wm_off | 0 / 2500 | 240 | 9.53 / 9.62 | 485 | 551 | 503 | -156 | 362 | strict off: WM bit-identical |
 
-## Branch at 40k frames — initial performance: — (not measured yet)
+## Branch at 40k frames — initial performance: 580 ± 22 (SE, 10 ep)
 
 | arm | WM / AC updates | update s/epoch | peak VRAM GiB (alloc/reserved) | eval +10k | eval +20k (final) | eval AUC | final − full mean | train return | notes |
 |---|---|---:|---|---:|---:|---:|---:|---:|---|
-| R1_full1024 | all / 2500 | 355 | — | 740 | 846 | — | — | 570 | ncrl_probe/branch_ncrl.py, before branch_selective; peak VRAM not logged |
-| full_rep | 2500 / 2500 | 362 | — | 861 | 914 | — | — | 563 | peak VRAM not logged |
-| wm_every4 | 625 / 2500 | 275 | — | 882 | 895 | — | +15 | 557 | peak VRAM not logged |
-| wm_off | 0 / 2500 | 247 | — | 759 | 711 | — | -169 | 628 | old off: WM shrank 0.25% (reward-step weight decay); peak VRAM not logged |
+| R1_full1024 | all / 2500 | 355 | — | 740 | 846 | 726 | — | 570 | ncrl_probe/branch_ncrl.py, before branch_selective; peak VRAM not logged |
+| full_rep | 2500 / 2500 | 362 | — | 861 | 914 | 804 | — | 563 | peak VRAM not logged |
+| full_to60k | 2500 / 2500 | 353 | 10.29 / 10.84 | 818 | 887 | 776 | — | 604 | saved end state (60k branch point) |
+| wm_every4 | 625 / 2500 | 275 | — | 882 | 895 | 810 | +12 | 557 | peak VRAM not logged |
+| wm_every8 | 313 / 2500 | 263 | 10.29 / 10.77 | 770 | 683 | 701 | -199 | 596 |  |
+| wm_off | 0 / 2500 | 247 | — | 759 | 711 | 702 | -171 | 628 | old off: WM shrank 0.25% (reward-step weight decay); peak VRAM not logged |
 
-Full-update replicates at this point: +10k [740, 861], +20k [846, 914] (spread = same-setting noise)
+Full-update replicates at this point: +10k [740, 861, 818], +20k [846, 914, 887] (spread = same-setting noise)
+
+## Branch at 60k frames — initial performance: 897 ± 15 (SE, 10 ep)
+
+| arm | WM / AC updates | update s/epoch | peak VRAM GiB (alloc/reserved) | eval +10k | eval +20k (final) | eval AUC | final − full mean | train return | notes |
+|---|---|---:|---|---:|---:|---:|---:|---:|---|
+| s60_full | 2500 / 2500 | 377 | 10.29 / 10.84 | 910 | 915 | 908 | — | 663 |  |
+| s60_wm_off | 0 / 2500 | 254 | 9.53 / 9.62 | 917 | 842 | 893 | -73 | 680 | strict off: WM bit-identical |
 

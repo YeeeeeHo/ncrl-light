@@ -1,0 +1,1 @@
+{"wm_every": 1, "freeze": [], "strict_off": false, "save_end_state": null, "branch_args": ["--base_run", "/home/yeho/RL/ncrl_light/runs/branch40k/full_to60k", "--snapshot", "/home/yeho/RL/ncrl_light/runs/branch40k/full_to60k/state_60000.full.pt", "--out", "s60_full", "--epochs", "20"]}

@@ -61,6 +61,21 @@
   - encoder freeze, decoder freeze, encoder + decoder freeze: 계산 절감이 4–9%뿐이고(M1), Fig. 8에서 해로움이 이미 보고되었으며, 되돌리기 분석(M2)에서 이 모듈들의 후반 변화가 새 데이터 오차에 거의 기여하지 않았다
   - continuation predictor: 없다
 
+**파일럿 종료 (2026-10-25 10:09)**: `wm_every8`까지 완료하고 queue empty. 정리는 `results/freq_summary_20261025.md`.
+- 40k 분기: Every4 895(Full 846–914 범위 안, −23% 시간), Every8 683(−199), OFF 711(−171)
+- 손실은 +20k에서 늦게 나타났다
+- GPU는 비워 두었고 추가 학습은 시작하지 않았다
+
+**보류 (2026-10-25 08:31, 사용자 요청)**
+- 완료할 실험은 `s20_wm_every4`(진행 중)와 `wm_every8`뿐이다
+- `wm_every2`, `freeze_gru`는 `pending.txt`에 `#HOLD`로 보류했다. 후속 하드웨어 측정(`post_pilot.sh`)은 대기만 하던 상태에서 멈췄으며, 실행된 것은 없다
+- 감시는 `runs/watchdog2.sh`로 교체했다(종료 조건 = queue empty)
+- 모든 결과, 체크포인트(`full_to60k/state_60000.full.pt`), 로그, 팔별 리플레이는 보존한다
+- 1/8이 끝나면 Full / Every4 / Every8 / OFF를 비교 정리한다(`tools/compare_freq.py` → `results/freq_comparison.md`). **그 뒤 추가 학습은 자동으로 시작하지 않는다**
+- 사용자의 다음 우선순위:
+  1. Quadruped Walk의 **독립 3 seed 검증** (base run부터 독립)
+  2. **다른 task에서 Full vs Every4** 비교
+
 **대기열 변경 (2026-10-24 22:22, 사용자 요청)**
 - 목적: WM 업데이트를 중단하는 학습 시점(20k / 40k / 60k)에 따라 성능 손실이 달라지는지 확인
 - 새 순서: `s20_wm_off` → (`eval_s20`, `eval_s40`) → `full_to60k` → `eval_s60` → `s60_full` → `s60_wm_off` → `s20_wm_every4` → `wm_every8` → `wm_every2` → `freeze_gru`. 이전 목록은 `runs/branch40k/pending_before_2026-10-24_reorder.txt`에 보존

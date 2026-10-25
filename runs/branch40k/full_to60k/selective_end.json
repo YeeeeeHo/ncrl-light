@@ -1,0 +1,15 @@
+{
+ "wm_steps": 2500,
+ "updates": 2500,
+ "strict_off": false,
+ "rel_change_encoder": 0.04263628387098632,
+ "max_abs_change_encoder": 0.016228817403316498,
+ "rel_change_decoder": 0.08030842419645096,
+ "max_abs_change_decoder": 0.11095631867647171,
+ "rel_change_gru": 0.09286752412133066,
+ "max_abs_change_gru": 0.04866766929626465,
+ "rel_change_prior": 0.07717704907063545,
+ "max_abs_change_prior": 0.042260680347681046,
+ "rel_change_posterior": 0.07069892636651409,
+ "max_abs_change_posterior": 0.02599320188164711
+}
